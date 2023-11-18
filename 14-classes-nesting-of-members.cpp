@@ -2,10 +2,11 @@
 using namespace std;
 
 class binary {
-    private: string s;
+    private:
+     string s;
+        int chk(void);
     public: 
     void read(void);
-    int chk(void);
     void reverse(void);
     void display(void);
 };
@@ -25,6 +26,7 @@ int binary :: chk(void){
 }
 
 void binary :: reverse(void){
+    chk();
     for(int i=0 ; i < s.length(); i++){
         if(s.at(i) == '0'){
             s.at(i) = '1';
@@ -35,7 +37,7 @@ void binary :: reverse(void){
     }
 }
 void binary :: display(void){
-
+    chk();
     cout<<"Your Binary Number is ";
     for(int i = 0 ; i < s.length(); i++){
         cout<<s.at(i);
@@ -48,7 +50,7 @@ void binary :: display(void){
 int main(){
     binary b;
     b.read();
-    b.chk();
+    // b.chk(); --> dont call this is private func
     b.display();
     b.reverse();
     b.display();
