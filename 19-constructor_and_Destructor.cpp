@@ -24,6 +24,17 @@ class points{
         this->y = b;
     }
 
+    //by default it has a copy constructor or u can assign like -->
+    points( points &obj){
+        this->x = obj.x;
+        this->y = obj.y;
+    }
+
+    //destructor 
+    ~points(){
+        cout<<"destroy"<<endl;
+    }
+
     friend points distance( points p1 , points p2);
 };
 
@@ -39,5 +50,14 @@ int main(){
     points h(2,3) , l(4,6);
     distance(h,l);
     points(9); 
+
+    //copy costuctor 
+    points ccvv(h);
+    // or
+    points ccvvor = h;
+
+    {
+        points dccc;
+    }
     return 0;
 }
